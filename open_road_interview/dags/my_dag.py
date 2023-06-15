@@ -11,7 +11,7 @@ default_email_reipients = "vedant3patel@gmail.com"
 default_recipients = Variable.get(default_email_reipients, default_var=None)
 
 def send(ti):
-    # This code only send an email if the day of the week is Friday
+    # This code only send an email if the day of the week is Thursday
     if datetime.now().weekday() == 3:
         data = ti.xcom_pull(key="newyorktimes_data", task_ids=["newyorktimes_data"])
         try:
